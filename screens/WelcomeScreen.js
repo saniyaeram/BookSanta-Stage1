@@ -13,30 +13,7 @@ export default class WelcomeScreen extends Component {
     }
   }
 
-  userLogin = (emailId, password)=>{
-    firebase.auth().signInWithEmailAndPassword(emailId, password)
-    .then(()=>{
-      return Alert.alert("Successfully Login")
-    })
-    .catch((error)=> {
-      var errorCode = error.code;
-      var errorMessage = error.message;
-      return Alert.alert(errorMessage)
-    })
-  }
-
-  userSignUp = (emailId, password) =>{
-    firebase.auth().createUserWithEmailAndPassword(emailId, password)
-    .then((response)=>{
-      return Alert.alert("User Added Successfully")
-    })
-    .catch(function(error) {
-      // Handle Errors here.
-      var errorCode = error.code;
-      var errorMessage = error.message;
-      return Alert.alert(errorMessage)
-    });
-  }
+  
 
 
   render(){
